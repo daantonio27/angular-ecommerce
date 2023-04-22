@@ -1,10 +1,10 @@
 <div class="w-75 mx-auto py-d pt-5 signup">
-  <h4 class="pb-2">Register Now:</h4>
+  <h4 class="pb-2">S'inscrire maintenant:</h4>
   <div class="alert alert-danger" *ngIf="apiError">
     {{ apiError }}
   </div>
   <form (ngSubmit)="handelRegister(registerForm)" [formGroup]="registerForm">
-    <label for="name">name:</label>
+    <label for="name">nom:</label>
     <input
       type="text"
       formControlName="name"
@@ -18,13 +18,13 @@
       class="alert alert-danger"
     >
       <p class="m-0" *ngIf="registerForm.get('name')?.getError('minlength')">
-        name minLength is 3
+        nom minLength est 3
       </p>
       <p class="m-0" *ngIf="registerForm.get('name')?.getError('maxlength')">
-        name maxLength is 10
+        nom maxLength est 10
       </p>
       <p class="m-0" *ngIf="registerForm.get('name')?.getError('required')">
-        name is required
+        Le nom est requis
       </p>
     </div>
     <label for="email">email:</label>
@@ -41,10 +41,10 @@
       class="alert alert-danger"
     >
       <p class="m-0" *ngIf="registerForm.get('email')?.getError('email')">
-        Email invalid
+        E-mail invalide
       </p>
       <p class="m-0" *ngIf="registerForm.get('email')?.getError('required')">
-        Email is required
+        L'e-mail est requis
       </p>
     </div>
     <label for="password">password:</label>
@@ -62,11 +62,10 @@
       class="alert alert-danger"
     >
       <p class="m-0" *ngIf="registerForm.get('password')?.getError('pattern')">
-        Enter Minimum eight characters, at least one letter, one number and one
-        special character
+        Saisissez au moins huit caractères, au moins une lettre, un chiffre et un caractère spécial
       </p>
       <p class="m-0" *ngIf="registerForm.get('password')?.getError('required')">
-        password is required
+        Mot de passe est requis
       </p>
     </div>
     <label for="rePassword">rePassword</label>
@@ -87,19 +86,19 @@
         class="m-0"
         *ngIf="registerForm.get('rePassword')?.getError('pattern')"
       >
-        Enter Minimum eight characters, at least one letter and one number
+        Entrez au moins huit caractères, au moins une lettre et un chiffre
       </p>
       <p
       class="m-0"
       *ngIf="registerForm.get('rePassword')?.getError('passwordMatch')"
     >
-    password and rePassword not match
+    le mot de passe et le rePassword ne correspondent pas
     </p>
       <p
         class="m-0"
         *ngIf="registerForm.get('rePassword')?.getError('required')"
       >
-        password is required
+        password est requis
       </p>
     </div>
     <label for="phone">phone:</label>
@@ -116,10 +115,10 @@
       class="alert alert-danger"
     >
       <p class="m-0" *ngIf="registerForm.get('phone')?.getError('pattern')">
-        Enter a valid egyption phone
+        Entrez un téléphone senegal valide
       </p>
       <p class="m-0" *ngIf="registerForm.get('phone')?.getError('required')">
-        phone is required
+        phone est requis
       </p>
     </div>
     <button

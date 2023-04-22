@@ -21,16 +21,22 @@ export class SignupComponent {
   email: new FormControl(null , [Validators.required , Validators.email]),
   password: new FormControl(null , [Validators.required ,Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)]),
   rePassword: new FormControl(null , [Validators.required ,Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/)]),
-  phone: new FormControl(null , [Validators.required , Validators.pattern(/^01[0125][0-9]{8}$/)]),
+  //phone: new FormControl(null , [Validators.required , Validators.pattern(/^01[0125][0-9]{8}$/)]),
+  phone: new FormControl(null, [Validators.required, Validators.pattern(/^\+221\d{9}$/)]),
+
  } , {validators:this.rePasswordMatch})
  rePasswordMatch(registerForm:any){
   let passwordControl = registerForm.get('password')
   let rePasswordControl = registerForm.get('rePassword')
-  if(passwordControl.value=== rePasswordControl.value){
+  if(passwordControl.value === rePasswordControl.value){
     return null
   }else{
-    rePasswordControl.setErrors({ passwordMatch:'password and rePassword not match'})
-   return{ passwordMatch:'password and rePassword not match'}
+    rePasswordControl.setErrors({
+      passwordMatch: 'le mot de passe et le rePassword ne correspondent pas',
+    });
+   return {
+     passwordMatch: 'le mot de passe et le rePassword ne correspondent pas',
+   };
   }
 
  }

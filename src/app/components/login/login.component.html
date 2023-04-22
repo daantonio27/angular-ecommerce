@@ -1,5 +1,5 @@
 <div class="w-75 mx-auto py-d pt-5">
-  <h4 class="pb-2">Login Now:</h4>
+  <h4 class="pb-2">Login </h4>
   <div class="alert alert-danger" *ngIf="apiError">
     {{ apiError }}
   </div>
@@ -19,10 +19,10 @@
       class="alert alert-danger"
     >
       <p class="m-0" *ngIf="loginForm.get('email')?.getError('email')">
-        Email invalid
+        E-mail invalide
       </p>
       <p class="m-0" *ngIf="loginForm.get('email')?.getError('required')">
-        Email is required
+        L'e-mail est requis
       </p>
     </div>
     <label for="password">password:</label>
@@ -40,11 +40,11 @@
       class="alert alert-danger"
     >
       <p class="m-0" *ngIf="loginForm.get('password')?.getError('pattern')">
-        Enter Minimum eight characters, at least one letter, one number and one
-        special character(begin with capetal character)
+        Saisissez au moins huit caractères, au moins une lettre, un chiffre et un
+        caractère spécial (commence par un caractère majuscule)
       </p>
       <p class="m-0" *ngIf="loginForm.get('password')?.getError('required')">
-        password is required
+        Mot de passe requis
       </p>
     </div>
     <button
