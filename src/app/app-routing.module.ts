@@ -16,7 +16,7 @@ import { AllordersComponent } from './components/allorders/allorders.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home', pathMatch:'full'},
-  {path:'home',canActivate:[AuthGuard] ,component:HomeComponent,title:'Home'},
+  {path:'home' ,component:HomeComponent,title:'Home'},
   {path:'about' , canActivate:[AuthGuard],component:AboutComponent,title:'About'},
   {path:'categories' ,canActivate:[AuthGuard],component:CategoriesComponent,title:'Categories'},
   {path:'cart',canActivate:[AuthGuard] ,component:CartComponent,title:'cart'},
